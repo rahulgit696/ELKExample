@@ -6,6 +6,6 @@ COPY . /app
 
 WORKDIR /app
 
-EXPOSE 8009
+EXPOSE 8011
 
 CMD mvn spring-boot:run 
