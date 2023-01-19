@@ -17,11 +17,11 @@ node {
 	}
 
 	stage('Deploy') {
-		sh ("docker run -d -p 8006:8080 -v /var/log/:/var/log/ ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+		sh ("docker run -d -p 8007:8080 -v /var/log/:/var/log/ ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 	}
 	
 	stage('Run docker image'){
-		sh("docker run -t -p 8006 ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+		sh("docker run -t -p 8007 ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 	}
 	
 // 	stage('Remove old images') {
