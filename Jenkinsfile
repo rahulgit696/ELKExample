@@ -20,8 +20,8 @@ node {
 		sh ("docker run -d -p 8011:8080 -v /var/log/:/var/log/ ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 	}
 	
-	stage('Remove old images') {
-		// remove docker pld images
-		sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
-   }
+// 	stage('Remove old images') {
+// 		// remove docker pld images
+// 		sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
+//    }
 }
