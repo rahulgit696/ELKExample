@@ -27,5 +27,5 @@ node {
 // 	stage('Remove old images') {
 // 		// remove docker pld images
 // 		sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
-   }
+//    }
 }
