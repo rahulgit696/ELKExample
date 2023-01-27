@@ -6,6 +6,6 @@ COPY . /app
 
 WORKDIR /app
 
-EXPOSE 8013
+EXPOSE 8015
 
-CMD ["mvn spring-boot:run","runserver","0.0.0.0:8013"]
+CMD ["mvn spring-boot:run","runserver","0.0.0.0:8015"]
