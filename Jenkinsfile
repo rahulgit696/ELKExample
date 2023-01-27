@@ -17,7 +17,7 @@ node {
 	}
 
 	stage('Deploy') {
-		sh ("docker run -d -p 8012:8080 -v /var/log/:/var/log/ ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+		sh ("docker run -d -p 8013:8080 ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 	}
 	
 // 	stage('Run docker image'){
