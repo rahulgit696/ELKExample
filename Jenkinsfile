@@ -1,6 +1,6 @@
 node {
-	def application = "springbootapp4"
-	def dockerhubaccountid = "rahulbadoni"
+	def application = "springbootapp"
+	def dockerhubaccountid = "siraj21"
 	stage('Clone repository') {
 		checkout scm
 	}
@@ -10,22 +10,18 @@ node {
 	}
 
 	stage('Push image') {
-		withDockerRegistry([ credentialsId: "rahulbadoni", url: "" ]) {
+		withDockerRegistry([ credentialsId: "dockerHub", url: "" ]) {
 		app.push()
 		app.push("latest")
 	}
 	}
 
 	stage('Deploy') {
-		sh ("docker run -d -p 8007:8007 ${dockerhubaccountid}/${application}:${BUILD_NUMBER} todo-app:v1.0")
+		sh ("docker run -d -p 81:8080 -v /var/log/:/var/log/ ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
 	}
 	
- 	stage('Run docker image'){
- 		sh("docker run -t -p 8007 ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
- 	}
-	
- 	stage('Remove old images') {
- 		// remove docker pld images
- 		sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
-    }
+	stage('Remove old images') {
+		// remove docker pld images
+		sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
+   }
 }
