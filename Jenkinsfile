@@ -17,7 +17,7 @@ node {
 	}
 
 	stage('Deploy') {
-		sh ("docker run -d -p 8015:8015 ${dockerhubaccountid}/${application}:${BUILD_NUMBER} todo-app:v1.0")
+		sh ("docker run -d -p 8007:8007 ${dockerhubaccountid}/${application}:${BUILD_NUMBER} todo-app:v1.0")
 	}
 	
  	stage('Run docker image'){
