@@ -20,12 +20,12 @@ node {
 		sh ("docker run -d -p 8015:8015 ${dockerhubaccountid}/${application}:${BUILD_NUMBER} todo-app:v1.0")
 	}
 	
-// 	stage('Run docker image'){
-// 		sh("docker run -t -p 8007 ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
-// 	}
+ 	stage('Run docker image'){
+ 		sh("docker run -t -p 8007 ${dockerhubaccountid}/${application}:${BUILD_NUMBER}")
+ 	}
 	
-// 	stage('Remove old images') {
-// 		// remove docker pld images
-// 		sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
-//    }
+ 	stage('Remove old images') {
+ 		// remove docker pld images
+ 		sh("docker rmi ${dockerhubaccountid}/${application}:latest -f")
+    }
 }
