@@ -8,4 +8,4 @@ WORKDIR /app
 
 EXPOSE 8015
 
-CMD ["mvn spring-boot:run","runserver","0.0.0.0:8015"]
+CMD ["mvn spring-boot:run","runserver","0.0.0.0:8018"]
